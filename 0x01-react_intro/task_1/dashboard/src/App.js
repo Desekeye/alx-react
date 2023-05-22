@@ -1,40 +1,22 @@
-:root {
-	--primary-color: #E11D3F;
-	font: 18px Helvetica, Arial, sans-serif;
-}
+import React, { Component } from 'react'
+import logo from './logo.jpg'
+import { getFullYear, getFooterCopy } from './utils'
 
-.App {
-	background-color: #ffffff;
-	display: flex;
-	flex-direction: column;
-}
-
-.App-header {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	color: var(--primary-color);
-	border-bottom: 3px solid var(--primary-color);
-}
-
-.App-logo {
-	height: 200px;
-	width: 200px;
-}
-
-.App-body {
-	display: flex;
-	flex-direction: column;
-	margin: 3rem;
-	min-height: 50vh;
-}
-
-.App-footer {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	border-top: 3px solid var(--primary-color);
-	padding: 1rem;
-	font-style: italic;
+export default class App extends Component {
+	render() {
+		return (
+			<div className="App">
+	  			<header className="App-header">
+		  			<img src={logo} className="App-logo" alt="logo" />
+		  			<h1>School dashboard</h1>
+	  			</header>
+	 			<body className="App-body">
+		 		 	<p>Login to access the full dashboard</p>
+	  			</body>
+				<footer className="App-footer">
+					<p>Copyright {getFullYear()} - {getFooterCopy(true)}</p>
+				</footer>
+			</div>
+		)
+	}
 }
